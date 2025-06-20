@@ -1,0 +1,19 @@
+# Simple Newsletter Generator Requirements
+
+
+# Web scraping with browser automation
+playwright==1.40.0
+
+# AI integration for article summarization
+mistralai==0.4.2
+
+# Environment variables for API keys
+python-dotenv==1.0.0
+
+# HTTP requests (backup for simple requests)
+requests==2.31.0
+
+# HTML parsing (helpful for cleaning text)
+beautifulsoup4==4.12.2
+
+
