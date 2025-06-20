@@ -114,7 +114,7 @@ Simple configuration management:
 
 ## Learning Objectives
 
-By completing this project, you will learn:
+By completing this project, the object of the project:
 
 1. **Web Scraping**: How to automatically extract data from websites
 2. **API Integration**: How to work with external AI services
