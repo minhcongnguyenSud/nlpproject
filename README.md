@@ -125,20 +125,12 @@ By completing this project, you will learn:
 
 ## Next Steps
 
-Once you have the basic version working, try these improvements:
+Here is the expected function for final project:
 
 1. **Add More Sources**: Include more local news websites
 2. **Better Styling**: Improve the HTML/CSS design
-3. **Email Sending**: Send newsletters via email
-4. **Scheduling**: Run automatically every day
-5. **Configuration**: Add user-friendly settings
+3. **Scheduling**: Run automatically every day
 
-## Need Help?
-
-- Read through the code comments - they explain each step
-- Check the troubleshooting section above
-- Make sure all setup steps were completed correctly
-- Try running each step separately to identify issues
 
 ## Project Structure
 
