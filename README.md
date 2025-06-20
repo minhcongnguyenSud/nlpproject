@@ -9,7 +9,7 @@ A beginner-friendly Python project that automatically creates newsletters by scr
 3. **Creates Newsletter**: Builds a nice-looking HTML newsletter
 4. **Saves Results**: Saves the newsletter as an HTML file you can open in your browser
 
-## Prerequisites (What You Need)
+## Prerequisites
 
 - Python 3.8 or newer installed on your computer
 - A Mistral AI account (free signup at https://console.mistral.ai/)
