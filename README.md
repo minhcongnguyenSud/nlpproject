@@ -1,7 +1,5 @@
 # Simple AI Newsletter Generator
 
-A beginner-friendly Python project that automatically creates newsletters by scraping local news websites and summarizing articles with AI.
-
 ## What This Project Does
 
 1. **Scrapes News**: Visits local Sudbury news websites automatically
