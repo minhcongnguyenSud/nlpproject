@@ -125,11 +125,12 @@ By completing this project, you will learn:
 
 ## Next Steps
 
-Here is the expected function for final project:
+Here is the expected function for the final project:
 
 1. **Add More Sources**: Include more local news websites
 2. **Better Styling**: Improve the HTML/CSS design
 3. **Scheduling**: Run automatically every day
+4. **NLP technique**: Improve the content by improving the input for the AI API (Prompt engineering)
 
 
 ## Project Structure
