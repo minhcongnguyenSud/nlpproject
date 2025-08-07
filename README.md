@@ -42,7 +42,14 @@ pip install -r requirements.txt
 
 ### Step 4: Test Everything Works
 ```bash
-python simple_test.py
+# Run basic setup tests
+python tests/test_setup.py
+
+# Or run all tests
+python tests/run_tests.py
+
+# Or run the simple validation test
+python tests/simple_test.py
 ```
 
 ### Step 5: Run the Program!
@@ -69,27 +76,39 @@ Then open your browser to: http://localhost:8080
 Click the button to generate newsletters!
 
 ## Understanding the Code (For Learning)
+
 ```text
 main.py                    # Start here! Main program (easy to read)
 input/                     # Raw scraped articles (before AI processing)
 output/                    # Final newsletters (after AI processing)
+tests/                     # All test files organized here
+├── run_tests.py          # Test runner for all tests
+├── test_setup.py         # Setup validation test
+├── simple_test.py        # Simple validation test
+└── test_*.py             # Individual component tests
 src/
 ├── core/config.py         # Settings and configuration  
 ├── utils/utils.py         # Helper functions
 ├── newsletter_generator/  # The main magic happens here
 │   ├── scraper.py        # Gets articles from websites
-│   ├── summarizer.py     # Uses AI to make summaries
+│   ├── smart_analyzer.py # NLP content analysis
+│   ├── simple_categorized_summarizer.py  # AI summarization
 │   └── newsletter.py     # Creates the HTML newsletter
 └── api/server.py         # Web server for dashboard
+WORKFLOW.md               # Complete project documentation
 ```
 
 ### Key Files & Folders (What Each Does)
+
 - **main.py** - This is where everything starts! Easy to read and understand
+- **tests/** - All test files organized in one place with proper structure
+- **tests/run_tests.py** - Runs all tests automatically
 - **input/** - Raw scraped articles saved as JSON files (great for learning!)
 - **output/** - Final HTML newsletters ready to view
-- **scraper.py** - Shows how to get FULL content from websites (enhanced!)
-- **summarizer.py** - Shows how to use AI APIs (artificial intelligence)
-- **newsletter.py** - Shows how to create HTML files
+- **src/newsletter_generator/scraper.py** - Shows how to get FULL content from websites (enhanced!)
+- **src/newsletter_generator/simple_categorized_summarizer.py** - Shows how to use AI APIs (artificial intelligence)
+- **src/newsletter_generator/smart_analyzer.py** - Advanced NLP content analysis
+- **WORKFLOW.md** - Complete technical documentation and workflow guide
 
 ## Common Problems & Easy Fixes
 
@@ -120,6 +139,7 @@ playwright install chromium
 ## What You'll Learn
 
 This project teaches you:
+
 - **Web Scraping**: How to get FULL article content from multiple news sources automatically
 - **AI APIs**: How to use artificial intelligence in your programs  
 - **HTML Creation**: How to make web pages with Python
@@ -127,12 +147,17 @@ This project teaches you:
 - **Project Organization**: How to structure Python projects properly
 - **Data Pipeline**: See the data flow from raw scraped text → AI summaries → final newsletter
 - **Link Following**: Learn how to visit article pages for complete content
+- **Testing**: How to organize and run tests for your code
+- **Advanced NLP**: Content quality analysis and automatic categorization
 
 **Pro Tip**: Check the `input/` folder to see raw scraped articles with FULL content before AI processing!
+
+**Documentation**: Read `WORKFLOW.md` for complete technical documentation and workflow details!
 
 ## News Sources
 
 The scraper gets articles from these Sudbury news sources:
+
 - **greatersudbury.ca** - Official city news (works great!)
 - **ctvnews.ca/northern-ontario** - CTV News Northern Ontario (works great!)
 - **globalnews.ca/tag/sudbury-news/** - Global News Sudbury coverage (works great!)
@@ -146,11 +171,13 @@ Perfect for beginners!
 ## Advanced: Docker Setup
 
 If you want to try Docker (optional):
+
 ```bash
 make build    # Build the container  
 make up       # Start the service
 make down     # Stop everything
 ```
+
 ---
 
 **Happy coding!**

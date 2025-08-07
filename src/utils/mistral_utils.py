@@ -1,14 +1,7 @@
 """
 Shared Mistral AI utilities for Newsletter Generator
 
-Th                print(f"Mistral AI test successful: {result}")
-                return True
-        else:
-        print("Mistral AI test failed: No valid response")
-        return False
-        
-    except Exception as e:
-        print(f"Mistral AI test failed: {e}")e provides common Mistral AI client functionality to avoid code duplication.
+This provides common Mistral AI client functionality to avoid code duplication.
 """
 
 from mistralai.client import MistralClient
