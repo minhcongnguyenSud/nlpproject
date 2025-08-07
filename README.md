@@ -1,6 +1,6 @@
 # Simple AI Newsletter Generator
 
-## What This Does (Easy Explanation!)
+## What This Does
 
 This program automatically creates newsletters for you! Here's how it works:
 
@@ -88,7 +88,9 @@ tests/                     # All test files organized here
 └── test_*.py             # Individual component tests
 src/
 ├── core/config.py         # Settings and configuration  
-├── utils/utils.py         # Helper functions
+├── utils/
+│   ├── utils.py          # Helper functions
+│   └── mistral_utils.py  # Mistral AI integration utilities
 ├── newsletter_generator/  # The main magic happens here
 │   ├── scraper.py        # Gets articles from websites
 │   ├── smart_analyzer.py # NLP content analysis
@@ -105,6 +107,7 @@ WORKFLOW.md               # Complete project documentation
 - **tests/run_tests.py** - Runs all tests automatically
 - **input/** - Raw scraped articles saved as JSON files (great for learning!)
 - **output/** - Final HTML newsletters ready to view
+- **src/utils/mistral_utils.py** - Handles Mistral AI API integration and communication
 - **src/newsletter_generator/scraper.py** - Shows how to get FULL content from websites (enhanced!)
 - **src/newsletter_generator/simple_categorized_summarizer.py** - Shows how to use AI APIs (artificial intelligence)
 - **src/newsletter_generator/smart_analyzer.py** - Advanced NLP content analysis
