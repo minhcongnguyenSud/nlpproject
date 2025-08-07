@@ -1,144 +1,158 @@
 # Simple AI Newsletter Generator
 
-## What This Project Does
+## What This Does (Easy Explanation!)
 
-1. **Scrapes News**: Visits local Sudbury news websites automatically
-2. **Summarizes Articles**: Uses Mistral AI to create short, readable summaries  
-3. **Creates Newsletter**: Builds a nice-looking HTML newsletter
-4. **Saves Results**: Saves the newsletter as an HTML file you can open in your browser
+This program automatically creates newsletters for you! Here's how it works:
 
-## Prerequisites
+1. **Gets News Articles** - Visits 5+ local Sudbury news websites and collects articles from the past week
+2. **AI Makes Summaries** - Uses artificial intelligence to create short summaries  
+3. **Creates Newsletter** - Makes a beautiful HTML newsletter
+4. **Saves File** - Saves it so you can open it in your web browser
 
-- Python 3.8 or newer installed on your computer
-- A Mistral AI account (free signup at https://console.mistral.ai/)
-- Basic understanding of Python and command line
+## Super Easy Setup
 
-## Setup Instructions
+### What You Need First
+- Python installed on your computer
+- A free AI account (we'll show you how!)
 
-### Step 1: Download the Project
+### Step 1: Get Your AI Key
+1. Go to https://console.mistral.ai/
+2. Sign up for free
+3. Get your API key (like a password for AI)
+
+### Step 2: Setup the Program
 ```bash
-# Clone or download this project to your computer
-# Create a new folder and add all the project files
+# Copy the example file
+cp .env.example .env
+
+# Edit the .env file and add your API key
+# Change: MISTRAL_API_KEY=your_api_key_here
 ```
 
-### Step 2: Create Virtual Environment
+### Step 3: Activate Environment & Install Requirements
 ```bash
-# Navigate to your project folder
-cd simple_newsletter
-
-# Create a virtual environment
-python -m venv newsletter_env
-
 # Activate the virtual environment
-# On Windows:
-newsletter_env\Scripts\activate
+source .venv/bin/activate  # On Mac/Linux
+# OR
+.venv\Scripts\activate     # On Windows
 
-# On Mac/Linux:
-source newsletter_env/bin/activate
-```
-
-### Step 3: Install Required Packages
-```bash
-# Install all required packages
+# Install requirements
 pip install -r requirements.txt
-
-# Install Playwright browsers
-playwright install chromium
 ```
 
-### Step 4: Set Up Your API Key
-1. Go to https://console.mistral.ai/ and create a free account
-2. Copy your API key from the dashboard
-3. Copy the `.env` file template and rename it to `.env`
-4. Open `.env` and replace `your_api_key_here` with your actual API key
-
-### Step 5: Create Output Folder
+### Step 4: Test Everything Works
 ```bash
-# Create the output folder where newsletters will be saved
-mkdir output
+python simple_test.py
 ```
 
-## How to Run the Program
-
-1. Make sure your virtual environment is activated
-2. Run the main script:
+### Step 5: Run the Program!
 ```bash
+# Make sure .venv is activated first!
 python main.py
 ```
 
-3. Watch the program work! It will:
-   - Check your configuration
-   - Visit news websites
-   - Scrape articles
-   - Create AI summaries
-   - Build your newsletter
-   - Save it as an HTML file
+That's it! Your newsletter will be saved as an HTML file!
 
-4. Open the generated HTML file in your web browser to read your newsletter!
+## Two Ways to Use This
 
-## Understanding the Code
+### Way 1: Command Line (Simple)
+```bash
+python main.py          # Make a newsletter
+python main.py --help   # Get help
+```
 
-### main.py
-The main script that does everything. Read through it to understand:
-- How web scraping works with Playwright
-- How to call AI APIs
-- How to create HTML content
-- How to save files in Python
+### Way 2: Web Dashboard (Cool!)
+```bash
+python -m src.api.server
+```
+Then open your browser to: http://localhost:8080
+Click the button to generate newsletters!
 
-### config.py
-Simple configuration management:
-- Loads settings from .env file
-- Defines which websites to scrape
-- Sets up folder paths
+## Understanding the Code (For Learning)
+```text
+main.py                    # Start here! Main program (easy to read)
+input/                     # Raw scraped articles (before AI processing)
+output/                    # Final newsletters (after AI processing)
+src/
+├── core/config.py         # Settings and configuration  
+├── utils/utils.py         # Helper functions
+├── newsletter_generator/  # The main magic happens here
+│   ├── scraper.py        # Gets articles from websites
+│   ├── summarizer.py     # Uses AI to make summaries
+│   └── newsletter.py     # Creates the HTML newsletter
+└── api/server.py         # Web server for dashboard
+```
 
-## Troubleshooting
+### Key Files & Folders (What Each Does)
+- **main.py** - This is where everything starts! Easy to read and understand
+- **input/** - Raw scraped articles saved as JSON files (great for learning!)
+- **output/** - Final HTML newsletters ready to view
+- **scraper.py** - Shows how to get FULL content from websites (enhanced!)
+- **summarizer.py** - Shows how to use AI APIs (artificial intelligence)
+- **newsletter.py** - Shows how to create HTML files
 
-### "No API key found"
-- Make sure you copied your Mistral AI API key to the .env file
-- Check that the .env file is in the same folder as main.py
+## Common Problems & Easy Fixes
+
+### "No API key found" 
+```bash
+# Fix: Make sure your .env file has your API key
+# Edit .env file and add: MISTRAL_API_KEY=your_key_here
+```
 
 ### "No articles found"
-- Check your internet connection
-- Some websites might be temporarily unavailable
-- Try running the program again later
+```bash
+# Fix: Check your internet connection and try again
+python main.py
+```
+
+### "Module not found" 
+```bash
+# Fix: Install the requirements
+pip install -r requirements.txt
+```
 
 ### "Browser error"
-- Make sure you ran `playwright install chromium`
-- Try restarting your computer and running again
-
-### "Module not found"
-- Make sure your virtual environment is activated
-- Try running `pip install -r requirements.txt` again
-
-## Learning Objectives
-
-By completing this project, the object of the project:
-
-1. **Web Scraping**: How to automatically extract data from websites
-2. **API Integration**: How to work with external AI services
-3. **File Operations**: How to read and write files in Python
-4. **HTML/CSS**: Basic web page structure and styling
-5. **Error Handling**: How to make programs robust and user-friendly
-6. **Project Organization**: How to structure a Python project
-
-## Next Steps
-
-Here is the expected function for the final project:
-
-1. **Add More Sources**: Include more local news websites
-2. **Better Styling**: Improve the HTML/CSS design
-3. **Scheduling**: Run automatically every day
-4. **NLP technique**: Improve the content by improving the input for the AI API (Prompt engineering)
-
-
-## Project Structure
-
+```bash
+# Fix: Install the browser
+playwright install chromium
 ```
-simple_newsletter/
-├── main.py              # Main program (start here!)
-├── config.py           # Configuration settings
-├── requirements.txt    # Required Python packages
-├── .env               # Your API keys (keep this private!)
-├── output/            # Generated newsletters appear here
-└── README.md          # This file
+
+## What You'll Learn
+
+This project teaches you:
+- **Web Scraping**: How to get FULL article content from multiple news sources automatically
+- **AI APIs**: How to use artificial intelligence in your programs  
+- **HTML Creation**: How to make web pages with Python
+- **File Operations**: How to save and load files
+- **Project Organization**: How to structure Python projects properly
+- **Data Pipeline**: See the data flow from raw scraped text → AI summaries → final newsletter
+- **Link Following**: Learn how to visit article pages for complete content
+
+**Pro Tip**: Check the `input/` folder to see raw scraped articles with FULL content before AI processing!
+
+## News Sources
+
+The scraper gets articles from these Sudbury news sources:
+- **greatersudbury.ca** - Official city news (works great!)
+- **ctvnews.ca/northern-ontario** - CTV News Northern Ontario (works great!)
+- **globalnews.ca/tag/sudbury-news/** - Global News Sudbury coverage (works great!)
+- **thesudburystar.com** - The Sudbury Star newspaper (works great!)
+- **sudbury.com** - Requires JavaScript (can't scrape with simple tools)
+
+**Note**: Some modern websites (like sudbury.com) use JavaScript to load content, which means our simple scraper can't read them. This is normal - many news sites work this way. The other sources provide plenty of good articles!
+
+Perfect for beginners!
+
+## Advanced: Docker Setup
+
+If you want to try Docker (optional):
+```bash
+make build    # Build the container  
+make up       # Start the service
+make down     # Stop everything
 ```
+---
+
+**Happy coding!**
+
+Remember: The best way to learn is to read the code, run it, and try changing things!

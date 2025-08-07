@@ -1,0 +1,147 @@
+# Environment Variables (CRITICAL - Never commit these!)
+.env
+.env.*
+.env.local
+.env.production
+.env.staging
+*.env
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+newsletter_env/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.venv/
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# PyTorch/TensorFlow model files
+*.pth
+*.h5
+*.pkl
+*.joblib
+model_weights/
+models/
+checkpoints/
+
+# Data files (consider if you want to version control these)
+data/
+datasets/
+*.csv
+*.json
+*.txt
+*.log
+
+# Newsletter-specific generated files
+scraped_articles_*.json
+detailed_articles_*.json
+categorized_summaries_*.json
+categorized_summaries_*.html
+newsletter_*.html
+nlp_analysis_report_*.json
+test_articles_*.json
+
+# Output files
+output/
+results/
+logs/
+*.out
+
+# Input data files (scraped articles and processed data)
+input/
+input/*
+
+# Reference documentation (analysis and temporary docs)
+Reference/
+Reference/*
+
+# API Keys and Secrets (Additional protection)
+secrets.py
+secrets.json
+config_local.py
+credentials.json
+token.txt
+api_keys.txt
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+temp/
+tmp/
+
+# Testing and Coverage
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+.pytest/
+test-reports/
+test_results/
+
+# Test output files and temporary test data
+tests/output/
+tests/temp/
+tests/fixtures/temp_*
+test_output/
+test_data_temp/
+*_test.json
+*_test.html
+*_test.csv
+test_scraped_*.json
+test_newsletter_*.html
+test_analysis_*.json
+
+# Documentation builds
+docs/_build/
