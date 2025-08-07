@@ -1,6 +1,6 @@
 # Simple AI Newsletter Generator
 
-## What This Does (Easy Explanation!)
+## What This Does
 
 This program automatically creates newsletters for you! Here's how it works:
 
