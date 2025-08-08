@@ -31,16 +31,12 @@ COPY . .
 # Create output directory
 RUN mkdir -p output
 
-# Expose port for the web server
-EXPOSE 8080
+# Expose port for Streamlit
+EXPOSE 8501
 
 # Create a non-root user for security
 RUN useradd -m -u 1000 newsletter && chown -R newsletter:newsletter /app
 USER newsletter
 
-# Add health check
-HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
-    CMD python scripts/healthcheck.py
-
-# Command to run the application
-CMD ["python", "-m", "src.api.server"]
+# Command to run the Streamlit application
+CMD ["python", "-m", "streamlit", "run", "streamlit_app.py", "--server.port", "8501", "--server.address", "0.0.0.0"]

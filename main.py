@@ -53,11 +53,6 @@ FEATURES:
 • AI-powered category summaries
 • Professional HTML newsletter layout
 
-NEED HELP?
-• Make sure your .env file has your MISTRAL_API_KEY
-• Check that all Python packages are installed (pip install -r requirements.txt)
-
-Enjoy your modern, intelligent newsletter!
     """)
 
 

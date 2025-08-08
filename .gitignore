@@ -142,6 +142,6 @@ test_data_temp/
 test_scraped_*.json
 test_newsletter_*.html
 test_analysis_*.json
-
+tests/
 # Documentation builds
 docs/_build/

@@ -687,21 +687,6 @@ docker stats newsletter-generator
 curl -f http://localhost:8000/health || echo "API unhealthy"
 ```
 
-### Performance Optimization
-
-#### Optimization Strategies
-1. **NLP Model Caching**: Cache classification results
-2. **Request Batching**: Batch similar articles for processing
-3. **Connection Pooling**: Reuse HTTP connections
-4. **Memory Management**: Clear unused model weights
-5. **Database Integration**: Store intermediate results
-
-#### Scaling Recommendations
-- **Horizontal Scaling**: Multiple worker containers
-- **Load Balancing**: Nginx reverse proxy
-- **Caching Layer**: Redis for frequent requests
-- **Queue System**: Celery for background processing
-- **Database**: PostgreSQL for persistent storage
 
 ---
 
@@ -713,19 +698,6 @@ curl -f http://localhost:8000/health || echo "API unhealthy"
 - [spaCy Usage Guide](https://spacy.io/usage)
 - [Docker Best Practices](https://docs.docker.com/develop/best-practices/)
 
-### Development Resources
-- **Code Style**: Follow PEP 8 Python style guide
-- **Git Workflow**: Feature branches with pull requests
-- **Testing**: Maintain >80% code coverage
-- **Documentation**: Keep README and WORKFLOW.md updated
 
-### Support & Contributing
-- **Issues**: Use GitHub Issues for bug reports
-- **Feature Requests**: Submit via GitHub Discussions
-- **Contributing**: See CONTRIBUTING.md for guidelines
-- **License**: MIT License (see LICENSE file)
 
 ---
-
-*Last Updated: August 7, 2025*
-*Version: 1.0.0*
