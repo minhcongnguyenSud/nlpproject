@@ -79,12 +79,25 @@ def generate_newsletter():
     try:
         from src.newsletter_generator.scraper import get_all_articles
         from src.newsletter_generator.simple_categorized_summarizer import run_categorized_summarization
+        import tempfile
+        import json
 
         p = st.progress(0); msg = st.empty()
         msg.text("Scraping articles..."); p.progress(20)
         articles = get_all_articles()
+        
+        # Save articles to a temporary file for the summarizer
+        with tempfile.NamedTemporaryFile(mode='w', suffix='.json', delete=False, encoding='utf-8') as temp_file:
+            json.dump({"articles": articles}, temp_file, ensure_ascii=False, indent=2)
+            temp_filepath = temp_file.name
+        
         msg.text("Analyzing and categorizing..."); p.progress(60)
-        result = run_categorized_summarization(articles)
+        result = run_categorized_summarization(temp_filepath)
+        
+        # Clean up temporary file
+        import os
+        os.unlink(temp_filepath)
+        
         msg.text("Newsletter generated successfully."); p.progress(100)
         return True, result
     except Exception as e:
